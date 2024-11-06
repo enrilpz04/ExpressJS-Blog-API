@@ -1,0 +1,7 @@
+### Obtener todos los autores
+GET http://localhost:3000/api/authors
+Accept: application/json
+
+### Obtener todos los posts
+GET http://localhost:3000/api/posts
+Accept: application/json
