@@ -1,0 +1,16 @@
+{
+  "name": "expressjs-blog-api",
+  "version": "1.0.0",
+  "description": "Tarea 8 - Máster Full Stack Developer. Desarrollo de una API con ExpressJS y MySQL para el manejo de post de un Blog.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Enrique Lopez Gordillo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "expressjs-blog-api": "file:",
+    "mysql2": "^3.11.4"
+  }
+}
