@@ -5,14 +5,23 @@ const app = require('./src/app');
 // Config .env
 require('dotenv').config();
 
+// Importa y configura la base de datos y los modelos
+const { sequelize } = require('./src/models');
+
 // Server creation
 const server = http.createServer(app);
 
 const PORT = process.env.PORT || 3000;
 
-server.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-});
+sequelize.sync({ force: false })
+  .then(() => {
+    server.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
 
 server.on('error', (error) => {
     console.log(error);

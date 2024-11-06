@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const { getAllAuthors, createAuthor } = require('../../controllers/authors.controller');
 
-router.get('/authors', getAllAuthors);
-router.post('/authors', createAuthor);
+router.get('/', getAllAuthors);
+router.post('/', createAuthor);
 
 module.exports = router;

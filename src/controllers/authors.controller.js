@@ -1,5 +1,4 @@
 const { Author } = require('../models');
-const { Op } = require('sequelize');
 
 const getAllAuthors = async (req, res) => {
     try {

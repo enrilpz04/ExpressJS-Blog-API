@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
+const Author = require('./authors.model'); // Importa el modelo Author
 
 const Post = sequelize.define('Post', {
   id: {
@@ -16,7 +17,7 @@ const Post = sequelize.define('Post', {
     allowNull: false
   },
   creation_date: {
-    type: DataTypes.DATEONLY,
+    type: DataTypes.DATE,
     allowNull: false
   },
   category: {
@@ -26,7 +27,7 @@ const Post = sequelize.define('Post', {
   authorId: {
     type: DataTypes.INTEGER,
     references: {
-      model: Author,
+      model: 'authors', // Nombre de la tabla en la base de datos
       key: 'id'
     }
   }
@@ -34,8 +35,5 @@ const Post = sequelize.define('Post', {
   tableName: 'posts',
   timestamps: false
 });
-
-Post.belongsTo(Author, { foreignKey: 'authorId' });
-Author.hasMany(Post, { foreignKey: 'authorId' });
 
 module.exports = Post;
