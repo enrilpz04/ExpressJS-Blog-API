@@ -4,6 +4,6 @@ const { getAllPosts, createPost, getPostsByAuthor } = require('../../controllers
 
 router.get('/', getAllPosts);
 router.post('/', createPost);
-router.get('/:authorId', getPostsByAuthor);
+router.get('/author/:authorId', getPostsByAuthor);
 
 module.exports = router;

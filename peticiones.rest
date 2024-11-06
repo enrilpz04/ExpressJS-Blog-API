@@ -1,7 +1,36 @@
+@host = http://localhost:3000
+
 ### Obtener todos los autores
-GET http://localhost:3000/api/authors
+GET {{host}}/api/authors
 Accept: application/json
 
 ### Obtener todos los posts
-GET http://localhost:3000/api/posts
+GET {{host}}/api/posts
 Accept: application/json
+
+### Obtener todos los posts de un autor
+GET {{host}}/api/posts/author/4
+Accept: application/json
+
+### Crear autor
+POST {{host}}/api/authors
+Content-Type: application/json
+
+{
+    "name" : "Enrique Lopez",
+    "email" : "enriquelopezgordillo@gmail.com",
+    "image" : "enrique_lopez.jpg"
+}
+
+### Crear post
+POST {{host}}/api/posts
+Content-Type: application/json
+
+{
+    "title": "Fifth Post",
+    "description": "This is the description of the fifth post",
+    "creation_date": "2023-01-01",
+    "category": "Category3",
+    "authorId": 4
+}
+
