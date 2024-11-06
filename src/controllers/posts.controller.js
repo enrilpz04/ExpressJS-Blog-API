@@ -1,5 +1,4 @@
 const { Post, Author } = require('../models');
-const { Op } = require('sequelize');
 
 const getAllPosts = async (req, res) => {
     try {
@@ -26,7 +25,7 @@ const createPost = async (req, res) => {
     }
 }
 
-const getPostByAuthor = async (req, res) => {
+const getPostsByAuthor = async (req, res) => {
     try {
         const posts = await Post.findAll({
             include: [
@@ -48,6 +47,6 @@ const getPostByAuthor = async (req, res) => {
 module.exports = {
     getAllPosts,
     createPost,
-    getPostByAuthor
+    getPostsByAuthor
 };
 
